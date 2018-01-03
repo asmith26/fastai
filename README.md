@@ -20,9 +20,10 @@ The fast.ai library provides many useful helper functions, resulting in a signif
 Example usages can be found within [this notebook](https://github.com/asmith26/fastai/blob/master/courses/dl1/lesson1.ipynb):
 - Choose architecture: `arch=resnet34; sz=224`
 - Setup data: `PATH = "data/dogscats/"; data = ImageClassifierData.from_paths(PATH, tfms=tfms_from_model(arch, sz))`
+  - Pandas pivot_table useful for summarising how many for each class there are `label_df = pd.read_csv(label_csv); label_df.pivot_table(index='breed', aggfunc=len).sort_values('id', ascending=False)`
 - Load pretrained covnets: `learn = ConvLearner.pretrained(arch, data, precompute=True)`
   - Can precompute features with `learn.precompute=True`
-  - Make all layers trainable: `learn.unfreeze()`
+  - Make all layers trainable: `learn.unfreeze()`. Similarly: `learn.freeze_to(-4)`
 - Train: `learn.fit(0.01, 3)`
 
 Enhance:
@@ -41,10 +42,15 @@ Enhance:
 Evaluate:
 - Analysing results (few (in)correct, uncertain, most (in)correct): see the defined functions `rand_by_mask`, `rand_by_correct`, `plot_val_with_title`, `most_by_mask`, `most_by_correct`,...
   - See plot_confusion_matrix`
+- TODO: add notes on from [CAM notebook](https://github.com/fastai/fastai/blob/master/courses/dl1/lesson7-CAM.ipynb)
 
 Save:
 - Save and load with `learn.save('model_name)` and `learn.load('model_name')`.
 
+TODO: add notes for `ConvLearner.from_model_data(...)` [notebook7-cifar10](https://github.com/fastai/fastai/blob/master/courses/dl1/lesson7-cifar10.ipynb) ("part2 is likely to discuss how to adapt the fast.ai library to your own models."))
+
+# TODO: Structured and time series data
+[Notebook](https://github.com/fastai/fastai/blob/master/courses/dl1/lesson3-rossman.ipynb)
 
 # Fast.ai Library files
 The following table was originally copied from the [fast.ai forumn (3rd Jan 2018)](http://forums.fast.ai/t/fastai-library-notes/7463):
