@@ -32,7 +32,7 @@ Enhance:
     - `[1e-4,1e-3,1e-2]` indicates to use different learning rates for different layers: first few layers=1e-4, middle layers=1e-3, and FC layers=1e-2. (We refer to this as differential learning rates, although there's no standard name for this techique in the literature that we're aware of.)
     - `cycle_len` indicates how many times to reset the learning rate (search notebook for stochastic gradient descent with restarts (SGDR)).
     - `cycle_mult` indicates how we reduce the learning rates of epochs.
-  - Use `lr_find()` to find highest learning rate where loss is still clearly improving.
+  - Use `lr_find()` to find highest learning rate where loss is still clearly improving ([see lesson 1 video at 1:13:24 for a great explanation](https://youtu.be/IPBSB1HLNLo?t=1h13m24s)).
     - Plot learning rate schedule (NOTE this changes over the course of one epoch and this plot shows that) `learn.sched.plot_lr()`
     - Plot of loss versus learning rate to see where our loss stops decreasing: `learn.sched.plot()`
 - Data augmentation: pass aug_tfms (augmentation transforms) to tfms_from_model, with a list of functions to apply that randomly change the image however we wish. For photos that are largely taken from the side (e.g. most photos of dogs and cats, as opposed to photos taken from the top down, such as satellite imagery) we can use the pre-defined list of functions `transforms_side_on`.
