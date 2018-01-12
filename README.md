@@ -9,7 +9,7 @@ The fast.ai library provides many useful helper functions, resulting in a signif
 0. Enable data augmentation, and `precompute=True`
 0. Use `lr_find()` to find highest learning rate where loss is still clearly improving
 0. Train last layer from precomputed activations for 1-2 epochs
-0. Train last layer with data augmentation (i.e. precompute=False) for 2-3 epochs with cycle_len=1
+0. Train last layer with data augmentation (i.e. learn.precompute=False) for 2-3 epochs with cycle_len=1
 0. Unfreeze all layers
 0. Set earlier layers to 3x-10x lower learning rate than next higher layer
 0. Use `lr_find()` again
