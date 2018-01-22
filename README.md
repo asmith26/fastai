@@ -6,6 +6,8 @@ The fast.ai library provides many useful helper functions, resulting in a signif
 
 ### Simple Summary:
 
+[Notebook for planet Kaggle competition - Top 4% private leaderboard score.](https://github.com/asmith26/Kaggle-Competitions/blob/master/Planet_amazon_resnet34.ipynb)
+
 0. Enable data augmentation, and `precompute=True`
 0. Use `lr_find()` to find highest learning rate where loss is still clearly improving
 0. Train last layer from precomputed activations for 1-2 epochs
