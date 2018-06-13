@@ -1,3 +1,5 @@
+Good [map overview](https://myndbook.com/view/6278) of the library.
+
 The fast.ai library provides many useful helper functions, resulting in a significant reduction in the number of lines of code that need to be written (e.g. in contrast to Keras). I try to summarise some of these below:
 
 # Fast.ai Summary
